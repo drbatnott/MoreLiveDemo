@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo of JavaScript Funnies</title>
+</head>
+<body>
+<h1>A page that allows us to test the Map Function on an array of Strings</h1>
+    <p>
+        The Map funcion will allow us to copy an array. Not the map function in CSS
+    </p>
+   
+    <!--The JavaScript output will be put into the innerHTML of the next paragraph-->
+    <p id="demo"></p>
+    
+    <script>
+        const stringThings = ["basement", "floor 1", "floor 2", "floor 3", "floor 4", "floor 5"];
+        const stringThingsCopy = stringThings.map(myFunction);
+        
+        document.getElementById("demo").innerHTML = stringThings;
+        document.getElementById("demo").innerHTML += "<br/>";
+        for (var i = 0; i < stringThingsCopy.length-1; i++) {
+            document.getElementById("demo").innerHTML += stringThingsCopy[i] + ", ";
+        }
+        document.getElementById("demo").innerHTML += stringThingsCopy[i] + ".";
+        /*The next line defines myFunction
+         * This function is going to take each element of the array turns it to upper case
+         * */
+        function myFunction(value, index, array) {
+            return  value.toUpperCase(); // toUpperCase raises to upper case
+        }
+    </script>
+    <a href="index.html">Go back to the index page</a>
+</body>
+</html>

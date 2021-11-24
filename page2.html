@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo of JavaScript Funnies</title>
+</head>
+<body>
+<h1>A page that allows us to test the Map F</h1>
+    <p>
+        <ul>
+            <li>
+                Arrays
+            </li>
+            <li>
+                Iterations
+            </li>
+            <li>
+                Objects
+            </li>
+        </ul>
+    </p>
+    <h2>JavaScript forEach example</h2>
+    <!--The JavaScript output will be put into the innerHTML of the next paragraph-->
+    <p id="demo"></p>
+    <!--The JavaScript has an array and calls a function which I called myFunction
+        from the forEach method of the array.
+        forEach is an iteration method
+        like a for(int i = 0; i < array.Length; i++) in C# - 
+        in JavaScript the array length is array.length
+        except this one will run for each of the array elements in turn
+        what it is saying is for each element in the array called stringThings
+        run the function myFunction and use the things about this array as the parameters
+    -->
+    <script>
+        const stringThings = ["Toyota", "bus", "tennis ball", "dustbin", "banana", "chicken liver", "chicken curry"
+        , "barbq"];
+        let txt = "";
+        stringThings.forEach(myFunction);
+        document.getElementById("demo").innerHTML = txt;
+        /*The next line defines myFunction
+         * value is the value of the array elemnt being passed
+         * in this example the 0th one is "Toyota" and the last one is "barbq"
+         * the index is the element number so 0 through 7 - for an 8 element array
+         * array is the array
+         * */
+        function myFunction(value, index, array) {
+            txt += "element " + index + " is " + value + "<br/>";
+        }
+    </script>
+    <a href="index.html">Go back to the index page</a>
+</body>
+</html>

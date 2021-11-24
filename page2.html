@@ -6,46 +6,26 @@
     <title>Demo of JavaScript Funnies</title>
 </head>
 <body>
-<h1>A page that allows us to test the Map F</h1>
+<h1>A page that allows us to test the Map Function</h1>
     <p>
-        <ul>
-            <li>
-                Arrays
-            </li>
-            <li>
-                Iterations
-            </li>
-            <li>
-                Objects
-            </li>
-        </ul>
+        The Map funcion will allow us to copy an array. Not the map function in CSS
     </p>
-    <h2>JavaScript forEach example</h2>
+   
     <!--The JavaScript output will be put into the innerHTML of the next paragraph-->
     <p id="demo"></p>
-    <!--The JavaScript has an array and calls a function which I called myFunction
-        from the forEach method of the array.
-        forEach is an iteration method
-        like a for(int i = 0; i < array.Length; i++) in C# - 
-        in JavaScript the array length is array.length
-        except this one will run for each of the array elements in turn
-        what it is saying is for each element in the array called stringThings
-        run the function myFunction and use the things about this array as the parameters
-    -->
+    
     <script>
-        const stringThings = ["Toyota", "bus", "tennis ball", "dustbin", "banana", "chicken liver", "chicken curry"
-        , "barbq"];
-        let txt = "";
-        stringThings.forEach(myFunction);
-        document.getElementById("demo").innerHTML = txt;
+        const numberThings = [10, 2, 27, 13, 196, 45];
+        const numberThingsCopy = numberThings.map(myFunction);
+        
+        document.getElementById("demo").innerHTML = numberThings;
+        document.getElementById("demo").innerHTML += "<br/>" + numberThingsCopy;
         /*The next line defines myFunction
-         * value is the value of the array elemnt being passed
-         * in this example the 0th one is "Toyota" and the last one is "barbq"
-         * the index is the element number so 0 through 7 - for an 8 element array
-         * array is the array
+         * This function is going to take each element of the array and raise it's value
+         * to the power of it's index
          * */
         function myFunction(value, index, array) {
-            txt += "element " + index + " is " + value + "<br/>";
+            return value ** index; // ** raises value to the power that follows
         }
     </script>
     <a href="index.html">Go back to the index page</a>
